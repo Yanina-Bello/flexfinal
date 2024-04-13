@@ -1,5 +1,7 @@
-import { View, TextInput, Button, StyleSheet, Text, FlatList, TouchableOpacity, Modal } from "react-native";
+import { View, TextInput, Button, StyleSheet, Text, FlatList, TouchableOpacity, ScrollView } from "react-native";
 import React, { useState } from "react";
+import ModalCustom from "./src/components/modalCustom/modalCustom";
+import TaskInput from "./src/components/taskInput/taskInput"
 
 const taskExample = [
     { id: 1, value: "Pasear perro" },
@@ -70,22 +72,12 @@ const App = () => {
                 />
             </View>
 
-            <Modal visible={modalVisible} animationType="slide" transparent={true}>
-                <View style={styles.modalStyles}>
-                    <View style={styles.modalContainer}>
-                        <View style={styles.textContainer}>
-                            <Text>Estas seguro que queres borrar:</Text>
-                        </View>
-                        <View style={styles.textContainer}>
-                            <Text style={styles.textModal}>{itemSelected.value}</Text>
-                        </View>
-                        <View style={styles.btnContainer}>
-                            <Button title="Borrar" onPress={handleDelete} />
-                            <Button title="Cancelar" onPress={handleCancelModal} />
-                        </View>
-                    </View>
-                </View>
-            </Modal>
+            <ModalCustom
+                handleCancelModal={handleCancelModal}
+                handleDelete={handleDelete}
+                itemSelected={itemSelected}
+                modalVisible={modalVisible}
+            />
         </View>
     )
 }
@@ -96,20 +88,25 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 30,
         alignItems: "center",
-        backgroundColor: "#888888",
+        backgroundColor: "##FF6550",
         flex: 1
     },
     inputContainer: {
         flexDirection: "row",
-        justifyContent: "space-between",
+        width: "100%",
+        justifyContent: "center",
         alignItems: "center",
         paddingHorizontal: 20,
+        gap: 10,
     },
     input: {
         borderBottomWidth: 1,
+        backgroundColor: "#FFC250",
         borderBottomColor: "black",
-        width: 250,
-        fontSize: 16
+        width: 240,
+        fontSize: 16,
+        height: 35,
+        paddingHorizontal: 5,
     },
     taskContainer: {
         marginTop: 15,
@@ -120,7 +117,7 @@ const styles = StyleSheet.create({
     card: {
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#cccccc",
+        backgroundColor: "#ffff55",
         width: "100%",
         paddingVertical: 15,
         marginVertical: 10,
@@ -134,7 +131,7 @@ const styles = StyleSheet.create({
         width: "90%",
     },
     modalStyles: {
-        backgroundColor: "#cccccc88",
+        backgroundColor: "#ffff55",
         flex: 1,
         alignItems: "center",
         justifyContent: "center"
@@ -148,7 +145,7 @@ const styles = StyleSheet.create({
         borderRadius: 7
     },
     textContainer: {
-        
+
     },
     btnContainer: {
         flexDirection: "row",
