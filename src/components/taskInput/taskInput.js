@@ -10,7 +10,7 @@ const TaskInput = (textItem, addItem, handleChangeText) => {
                 value={textItem}
                 placeholder={"Clean the house..."}
             />
-            <Button title="ADD" color="#5555ff" onPress={{ addItem }} />
+            <Button title="ADD" color="#FF2350" onPress={{ addItem }} />
 
         </View>
     )

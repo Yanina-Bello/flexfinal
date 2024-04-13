@@ -31,7 +31,7 @@ export default ModalCustom
 
 const styles = StyleSheet.create({
     modalStyles: {
-        backgroundColor: "#cccccc88",
+        backgroundColor: "#378485",
         flex: 1,
         alignItems: "center",
         justifyContent: "center"

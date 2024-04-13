@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 30,
         alignItems: "center",
-        backgroundColor: "##FF6550",
+        backgroundColor: "#A9E2CB",
         flex: 1
     },
     inputContainer: {
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     },
     input: {
         borderBottomWidth: 1,
-        backgroundColor: "#FFC250",
+        backgroundColor: "#FFE7FF",
         borderBottomColor: "black",
         width: 240,
         fontSize: 16,
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     card: {
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#ffff55",
+        backgroundColor: "#EC92CB",
         width: "100%",
         paddingVertical: 15,
         marginVertical: 10,
